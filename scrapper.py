@@ -1,20 +1,20 @@
 
+from bs4 import BeautifulSoup
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 import requests
-from bs4 import BeautifulSoup
 import pandas as pd
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
-driver.get("https://www.malt.fr/s?q=java")
+driver.get("https://www.malt.fr/s?q=java")          # We're looking into the Java developers
 
-cols = ['name', 'title', 'rate', 'skill', 'badge']
+cols = ['name', 'title', 'rate', 'skill', 'badge']  # Given classes names that will be scrapped
 df = pd.DataFrame([(1,2,3,4,5)], columns = cols)
 
 i=1
-url = "https://www.malt.fr/s?q=java&p=" + str(i)
-while True:
+url = "https://www.malt.fr/s?q=java&p=" + str(i)         # 'ith' page
+while True:                                              # To iterate over every page, don't forget to login :)
     i = i+1
     url = "https://www.malt.fr/s?q=java&p=" + str(i)
     page = driver.get(url)
@@ -24,10 +24,10 @@ while True:
     if testpage.status_code != 200:
         break
     soup = BeautifulSoup(page, 'html.parser')
-    name = soup.find_all(class_="profile-card-header__full-name") ###### Name
-    titre = soup.find_all(class_="link quiet") ###### Titre
-    rate = soup.find_all(class_="profile-card-reputation__rate") ###### Rate
-    skill = soup.find_all(class_="profile-card-body__skills malt-tag-list cropped loaded")
+    name = soup.find_all(class_="profile-card-header__full-name")                        ###### Name
+    titre = soup.find_all(class_="link quiet")                                            ###### Title
+    rate = soup.find_all(class_="profile-card-reputation__rate")                           ###### Rate
+    skill = soup.find_all(class_="profile-card-body__skills malt-tag-list cropped loaded") ###### Skills
     badge_level = soup.find(class_="profile-card__badge-level")
 
     skills = list()
