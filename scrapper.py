@@ -7,7 +7,7 @@ import requests
 import pandas as pd
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
-driver.get("https://www.malt.fr/s?q=java")          # We're looking into the Java developers
+driver.get("https://www.malt.fr/s?q=java")          # We're looking for the Java developers
 
 cols = ['name', 'title', 'rate', 'skill', 'badge']  # Given classes names that will be scrapped
 df = pd.DataFrame([(1,2,3,4,5)], columns = cols)
