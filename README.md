@@ -1,6 +1,9 @@
 ## Project: Scraping data over Malt.fr
 
-### Install
+### Install Requirements
+
+```pip install -r requirements.txt```
+
 
 This project requires **Python** and the following libraries (+ Pandas) installed :
 
