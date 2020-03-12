@@ -5,8 +5,7 @@
 
 - Python 3.x
 - MySQL Database (for this example)
-- virtualenv
-- 
+- virtualenv 
 
 ### Install Requirements
 
