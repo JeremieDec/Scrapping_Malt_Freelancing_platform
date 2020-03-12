@@ -11,6 +11,7 @@
 ### Install Requirements
 
 ```pip install -r requirements.txt```
+
 ```pip install Flask-OAuthlib```
 
 This project requires **Python** and the following libraries (+ Pandas) installed :
