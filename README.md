@@ -1,5 +1,12 @@
 ## Project: Scraping data over Malt.fr
 
+
+### Requirements
+
+- Python 3.x
+- MySQL Database (for this example)
+- virtualenv
+
 ### Install Requirements
 
 ```pip install -r requirements.txt```
